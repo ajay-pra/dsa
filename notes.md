@@ -29,3 +29,6 @@ long long res = 1;
 for (int i = 0; i < k; i++) {
     res = res * (n - i) / (i + 1);
 }
+
+<!-- find and element in a vector -->
+if(find(nums.begin(), nums.end(), ans[i]) == nums.end())
