@@ -3,7 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Inside this I habe just checked the two trees each node while traversal using recursion 
+// Inside this I habe just checked the two 
+// trees each node while traversal using recursion 
+
 
 struct TreeNode {
     int val;

@@ -7,25 +7,25 @@ class Solution {
 public:
 
         void func(vector<int>& candidates, int target, int i, vector<vector<int>> &ans,vector<int> arr){
-        if(target ==0) {
-            ans.push_back(arr);
-            return;
-        }
-        if(target < 0 || i == candidates.size()) return; 
+            if(target ==0) {
+                ans.push_back(arr);
+                return;
+            }
+            if(target < 0 || i == candidates.size()) return; 
 
-        // take it 
-        arr.push_back(candidates[i]);
-        func(candidates,target-candidates[i],i+1,ans,arr);
-        arr.pop_back();
+            // take it 
+            arr.push_back(candidates[i]);
+            func(candidates,target-candidates[i],i+1,ans,arr);
+            arr.pop_back();
 
-        // not take it
-        for(int j=i+1;j<candidates.size();j++){
-            if(candidates[i]!=candidates[j]){
-             func(candidates,target,j,ans,arr);
-             break;
+            // not take it
+            for(int j=i+1;j<candidates.size();j++){
+                if(candidates[i]!=candidates[j]){
+                func(candidates,target,j,ans,arr);
+                break;
+                }
             }
         }
-    }
 
 
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {

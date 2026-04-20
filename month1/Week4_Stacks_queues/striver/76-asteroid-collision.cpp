@@ -34,6 +34,46 @@ public:
     }
 };
 
+
+
+class Solution2 {
+public:
+    vector<int> asteroidCollision(vector<int>& asteroids) {
+        stack<int> st;
+        for(int i=0;i<asteroids.size();i++){
+            int a = asteroids[i];
+            if(a>0){
+                st.push(a);
+            }else{
+                bool destroyed = false;
+                while(!st.empty() && st.top() > 0){
+                    int top = st.top();
+                    if(top < -a){
+                        st.pop();
+                    }
+                    else if(top== -a){
+                        st.pop();
+                        destroyed=true;
+                        break;
+                    }
+                    else{
+                        destroyed=true;
+                        break;
+                    }
+                }
+                if(!destroyed) st.push(a);
+            }
+        }
+        vector<int> result(st.size());
+        for(int i = st.size() - 1; i >= 0; i--) {
+            result[i] = st.top();
+            st.pop();
+        } 
+        return result;
+    }
+};
+
+
 int main() {
     Solution obj;
 
