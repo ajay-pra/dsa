@@ -1,4 +1,3 @@
-
 // https://leetcode.com/problems/binary-tree-preorder-traversal/
 
 #include <bits/stdc++.h>
